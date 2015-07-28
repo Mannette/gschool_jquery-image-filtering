@@ -14,11 +14,17 @@ $('.light').on("click", function(){
 
 $('<span>').addClass("forest").css({"background-image":"url(img/forest.jpg)"}).appendTo($('.textures')).on("click",function(){
   $('body').css({"background-size":"cover","background-image": "url(img/forest.jpg)"});
+
+  $(".low").on("click", function(){
+    $(".image-container").html($(".home").sort(function(a, b){
+      return $(a).attr('data-price') - $(b).attr('data-price');
+    }));
+  });
 });
 
 $('.low').on('click',function(){
 
-})
+});
 });
 
 
@@ -28,6 +34,15 @@ function addCabin(url, price) {
   $("<h4>").html(price).appendTo(house);
   return house;
 }
-function sort(array) {
-  console.log(array.sort());
+function parseSort(array) {
+  var homeArray = $('.home');
+  var prices = [];
+
+  for (var i = 0; i < homeArray.length; i++) {
+    prices.push(parseInt($(homeArray[i]).attr("data-price")));
+  }
+  
+  return prices.sort(function(a, b){return a - b;});
 }
+parseSort();
+
