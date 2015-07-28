@@ -2,7 +2,7 @@
 
 In this repository, you will practice implementing a filtering system on a set of DOM attributes.
 
-You will use click handlers, data-attributes, and whatever other means possible to filter cabins based on their price. Editing the HTML is fair game for this exercise.
+You will use click handlers, data-attributes, and whatever other means possible to filter cabins based on their price. **DO NOT EDIT THE HTML**.
 
 ![Screen Shot](screenshot.png)
 
