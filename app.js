@@ -14,18 +14,34 @@ $('.light').on("click", function(){
 
 $('<span>').addClass("forest").css({"background-image":"url(img/forest.jpg)"}).appendTo($('.textures')).on("click",function(){
   $('body').css({"background-size":"cover","background-image": "url(img/forest.jpg)"});
+  });
 
   $(".low").on("click", function(){
-    $(".image-container").html($(".home").sort(function(a, b){
+    $(".image-container").empty().html(cabinsLow);
+    });
+    var cabinsLow = $(".home").sort(function(a, b){
       return $(a).attr('data-price') - $(b).attr('data-price');
-    }));
-  });
+    });
+
+    $(".high").on("click", function(){
+    $(".image-container").empty().html(cabinsHigh);
+    });
+    var cabinsHigh = $(".home").sort(function(a, b){
+      return $(b).attr('data-price') - $(a).attr('data-price');
+    });
+
+    function checkChecked () {
+      
+    }
+
+    $(".filters").on('click', "input:checked", function(e){
+      var upper = e.target.value;
+      console.log(upper);
+    });
+
+
 });
 
-$('.low').on('click',function(){
-
-});
-});
 
 
 function addCabin(url, price) {
